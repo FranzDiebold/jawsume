@@ -20,6 +20,8 @@ jobs:
         run: make install-build
       - name: Build package
         run: make build
+      - name: Install publish dependencies
+        run: make install-publish
       - name: Check package
         run: make check
       - name: Publish package to TestPyPi
