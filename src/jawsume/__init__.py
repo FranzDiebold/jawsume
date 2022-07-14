@@ -1,5 +1,5 @@
 """
-Use AWSume in Jupyter.
+Use AWSume in Jupyter to access AWS resources.
 """
 
 import os
@@ -10,10 +10,10 @@ from awsume.awsumepy import awsume
 
 def jawsume(profile_name: str, mfa_token: Optional[str] = None) -> None:
     """
-    Use AWSume in Jupyter.
+    Use AWSume to set relevant environment variables.
     """
     if mfa_token is None:
-        mfa_token = input()
+        mfa_token = input("Enter MFA token:")
 
     session = awsume(profile_name, mfa_token=mfa_token)
     credentials = session.awsume_credentials
