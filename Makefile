@@ -14,6 +14,10 @@ build:  ## Build package.
 install-publish:  ## Install publish dependencies.
 	python -m pip install twine
 
+.PHONY: check
+check:  ## Check long description regarding PyPi.
+	python -m twine check dist/*
+
 .PHONY: publish-test
 publish-test:  ## Publish to TestPyPI.
 	python -m twine upload --repository testpypi dist/*
